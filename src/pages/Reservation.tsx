@@ -12,11 +12,11 @@ const Reservation = () => {
         const itemId = target.dataset.id!;
         const itemIndex = selectedItems.indexOf(itemId);
         if (itemIndex === -1) {
+            target.style.backgroundColor = '#986AD3';
             setSelectedItems([...selectedItems, itemId]);
-            target.classList.add('bg-[#986AD3');
         } else {
+            target.style.backgroundColor ='#A94545'
             setSelectedItems(selectedItems.filter((item) => item !== itemId));
-            target.classList.remove('bg-[#986AD3');
         }
     }
 
