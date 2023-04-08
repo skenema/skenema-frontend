@@ -2,7 +2,7 @@ import { DefaultBodyType, PathParams, rest } from "msw";
 import type { Movie } from "./types";
 
 // TODO: Use date for start time
-const movies: Movie[] = [
+export const movies: Movie[] = [
     {
         id: "UUID12",
         title: "Sadman 2023",

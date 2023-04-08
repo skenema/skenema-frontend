@@ -5,6 +5,7 @@ import Dev from './pages/Dev'
 
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Movie from './pages/Movie'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/dev',
     element: <Dev />
+  },
+  {
+    path: '/movie',
+    element: <Movie />
   }
 ])
 
