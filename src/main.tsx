@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Movie from './pages/Movie'
 import Navbar from './components/Navbar'
 import Reservation from './pages/Reservation'
+import Confirm from './pages/Confirm'
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,12 @@ const router = createBrowserRouter([
     element: <Movie />
   },
   {
-    path: '/movie/:movieTitle/:showtime/reservation',
+    path: '/movie/reservation',
     element: <Reservation />
+  },
+  {
+    path: '/movie/confirm',
+    element: <Confirm />
   }
 ])
 

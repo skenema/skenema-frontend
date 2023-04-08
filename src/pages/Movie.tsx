@@ -8,8 +8,8 @@ const Movie = () => {
 
     return (
         <div className="w-full h-full grid place-content-center overflow-scroll">
-            {data.map((movie) => {
-                return <MovieCard key={movie.id} movieDetail={data![0]}/>
+            {data.map((movie, id) => {
+                return <MovieCard key={id} movieDetail={movie}/>
             })}
         </div>
     )
