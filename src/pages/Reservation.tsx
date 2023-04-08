@@ -3,28 +3,21 @@ import { Params, useParams } from 'react-router-dom';
 
 const Reservation = () => {
     const { movieTitle, showtime }: Readonly<Params<string>> = useParams();
-
-    // Create state for the list of selected items
     const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
-    // Define a click handler for the grid items
     function clickHandler(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         const item = event.currentTarget;
         const itemId = item.dataset.id;
 
-        // Check if the item is already selected
         if (selectedItems.includes(itemId!)) {
-            // If it is, remove it from the list and reset the background color
             setSelectedItems(selectedItems.filter((id) => id !== itemId));
             item.classList.remove('bg-[#FCD34D]');
         } else {
-            // If it isn't, add it to the list and set the background color
             setSelectedItems([...selectedItems!, itemId!]);
             item.classList.add('bg-[#FCD34D]');
         }
     }
 
-    // Create an array of grid items
     const gridItems = [];
     for (let i = 0; i < 48; i++) {
         gridItems.push(
