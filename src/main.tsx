@@ -6,6 +6,8 @@ import Dev from './pages/Dev'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Movie from './pages/Movie'
+import Navbar from './components/Navbar'
+import Reservation from './pages/Reservation'
 
 const router = createBrowserRouter([
   {
@@ -19,11 +21,16 @@ const router = createBrowserRouter([
   {
     path: '/movie',
     element: <Movie />
+  },
+  {
+    path: '/movie/:movieTitle/:showtime/reservation',
+    element: <Reservation />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <Navbar />
     <RouterProvider router={router} />
   </React.StrictMode>,
 )

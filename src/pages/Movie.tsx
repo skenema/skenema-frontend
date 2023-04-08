@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react"
+import MovieCard from "../components/MovieCard";
+import { movies } from "../mocks/handlers";
 import { Movie } from "../mocks/types"
 
 const Movie = () => {
-    const [data, setData] = useState<Movie[]>();
-
-    useEffect(() => {
-        const movieFetch = async () => {
-            const movies: Movie[] = await (await fetch("http://localhost:5173/movies")).json()
-        }
-        movieFetch()
-    }, []);
+    const [data, setData] = useState<Movie[]>(movies);
 
     return (
-        <div>Movie</div>
+        <div className="w-full h-full grid place-content-center overflow-scroll">
+            {data.map((movie) => {
+                return <MovieCard key={movie.id} movieDetail={data![0]}/>
+            })}
+        </div>
     )
 }
 
