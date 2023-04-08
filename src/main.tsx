@@ -9,6 +9,7 @@ import Movie from './pages/Movie'
 import Navbar from './components/Navbar'
 import Reservation from './pages/Reservation'
 import Confirm from './pages/Confirm'
+import Summary from './pages/Summary'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/movie/confirm',
     element: <Confirm />
+  },
+  {
+    path: '/movie/summary',
+    element: <Summary />
   }
 ])
 

@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Movie } from '../mocks/types'
 
 const Confirm = () => {
-    const selectedSeat:string[] = useLocation().state.seat
+    const selectedSeat: string[] = useLocation().state.seat
     const movie: Movie = useLocation().state.movie
     const showtime = useLocation().state.showtime
     const date = new Date()
@@ -27,7 +27,9 @@ const Confirm = () => {
                     {detailTable("Seat", selectedSeat.join(', '))}
                     {detailTable("Showtime", `${date.getDay()} ${date.getMonth()} ${date.getFullYear()} - ${showtime}`)}
                 </div>
-                <button className="btn btn-active btn-primary absolute bottom-3 right-3">ยืนยัน</button>
+                <Link to={"/movie/summary"} state={{ selectedSeat: selectedSeat, title: movie.title, showtime: showtime }}>
+                    <button className="btn btn-active btn-primary absolute bottom-3 right-3">ยืนยัน</button>
+                </Link>
             </div>
         </div>
     )
