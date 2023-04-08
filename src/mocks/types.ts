@@ -10,6 +10,11 @@ export interface Movie {
     showtimes: Showtime[];
 }
 
+export interface ShowtimeReservation {
+    id: string; // Assume UUID
+    seats: Seat[]
+}
+
 export interface Seat {
     seatNumber: string; // Imagine H02 or something like that.
     isAvailable: boolean;
@@ -25,4 +30,9 @@ export interface Ticket {
     id: string;
     seatTicket: string; // Same as seatNumber
     showtime: Showtime['startTime']
+}
+
+// Not error in this context but from API
+export interface APIError {
+    message: string;
 }
