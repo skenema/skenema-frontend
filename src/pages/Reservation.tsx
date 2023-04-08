@@ -11,10 +11,10 @@ const Reservation = () => {
 
         if (selectedItems.includes(itemId!)) {
             setSelectedItems(selectedItems.filter((id) => id !== itemId));
-            item.classList.remove('bg-[#FCD34D]');
+            item.classList.remove('bg-[#986AD3]');
         } else {
             setSelectedItems([...selectedItems!, itemId!]);
-            item.classList.add('bg-[#FCD34D]');
+            item.classList.add('bg-[#986AD3]');
         }
     }
 
