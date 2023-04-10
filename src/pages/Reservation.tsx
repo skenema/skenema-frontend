@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { allSeat } from '../mocks/seat';
 import { Movie } from '../mocks/types';
 
 const Reservation = () => {
@@ -15,27 +16,10 @@ const Reservation = () => {
             target.style.backgroundColor = '#986AD3';
             setSelectedItems([...selectedItems, itemId]);
         } else {
-            target.style.backgroundColor ='#A94545'
+            target.style.backgroundColor = '#A94545'
             setSelectedItems(selectedItems.filter((item) => item !== itemId));
         }
     }
-
-    const gridItems = [];
-    for (let i = 0; i < 48; i++) {
-        const letterIndex = Math.floor(i / 12);
-        const letter = String.fromCharCode('A'.charCodeAt(0) + letterIndex);
-        const number = (i % 12) + 1;
-        const dataId = `${letter}-${number}`;
-        gridItems.push(
-            <div
-                key={i}
-                data-id={dataId}
-                className="bg-[#A94545] h-[2rem] w-[2rem] cursor-pointer"
-                onClick={clickHandler}
-            ></div>
-        );
-    }
-
 
     return (
         <div className="p-3 flex justify-center">
@@ -47,7 +31,15 @@ const Reservation = () => {
                     </p>
                 </div>
                 <div className="gap-2 grid grid-cols-12 auto-rows-[3rem] mt-[3rem] items-center">
-                    {gridItems}
+                    {allSeat.map((seat, id) => {
+                        return <div
+                            key={id}
+                            data-id={seat.seatNumber}
+                            className='h-[2rem] w-[2rem] cursor-pointer'
+                            onClick={seat.isAvailable ? clickHandler : undefined}
+                            style={{backgroundColor: seat.isAvailable ? '#A94545' : '#986AD3'}}
+                        ></div>
+                    })}
                 </div>
                 <div className="mt-6">
                     <p className="text-lg font-semibold">Selected Items:</p>
@@ -57,7 +49,7 @@ const Reservation = () => {
                         ))}
                     </ul>
                 </div>
-                <Link to={`/movie/confirm`} state={{ seat: selectedItems, movie: movie, showtime: showtime}}>
+                <Link to={`/movie/confirm`} state={{ seat: selectedItems, movie: movie, showtime: showtime }}>
                     <button className="btn btn-active btn-primary absolute bottom-3 right-3">ยืนยัน</button>
                 </Link>
 
