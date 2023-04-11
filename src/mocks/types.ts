@@ -1,6 +1,6 @@
 export interface Showtime {
     id: string;
-    startTime: string | Date;
+    startTime: string;
 }
 export interface Movie {
     id: string; // Assuming UUID
