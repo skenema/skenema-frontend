@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Movie } from '../mocks/types'
+import { Movie } from '../types/responses'
 
 const Confirm = () => {
     const selectedSeat: string[] = useLocation().state.seat
