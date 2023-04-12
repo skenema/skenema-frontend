@@ -17,7 +17,7 @@ const Movie = () => {
     return (
         <div className="w-full h-full grid place-content-center overflow-scroll">
             {!data && <p>Loading...</p>}
-            {data && data.map((movie, id) => {
+            {data && data.map((movie) => {
                 return <MovieCard key={movie.id} movieDetail={movie}/>
             })}
         </div>
