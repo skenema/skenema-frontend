@@ -24,8 +24,8 @@ const MovieCard = ({ movieDetail }: props) => {
                 <div className='text-center'>{movieDetail.cinema}</div>
                 <div className='flex justify-start items-center p-3'>
                     {movieDetail.showtimes.map((showtime, id) => {
-                        return <Link to={`/movie/reservation`} state={{showtime: showtime.startTime, movie: movieDetail}}>
-                            <button key={showtime.id} className="btn btn-success">{isoStringToNormalDate(showtime.startTime)}</button>
+                        return <Link to={`/movie/reservation`} state={{showtime: showtime.start_time, movie: movieDetail}}>
+                            <button key={showtime.id} className="btn btn-success">{isoStringToNormalDate(showtime.start_time)}</button>
                         </Link>
                     })}
                 </div>
