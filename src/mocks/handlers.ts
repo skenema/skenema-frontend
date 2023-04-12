@@ -7,7 +7,7 @@ export const handlers = [
     return res(ctx.status(200), ctx.json(movies));
   }),
   rest.get<DefaultBodyType, {id: string}, Movie | APIError>("/api/movies/:id", (req, res, ctx) => {
-    const movieId = req.params.id
+    const movieId = parseInt(req.params.id, 10)
     const movie = movies.find(m => m.id === movieId)
     if (movie) {
         return res(ctx.status(200), ctx.json(movie))

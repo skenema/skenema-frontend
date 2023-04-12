@@ -3,25 +3,25 @@ import type { Movie, Seat, ShowtimeReservation } from "./types";
 // TODO: Use date for start time
 export const movies: Movie[] = [
   {
-    id: "UUID12",
+    id: 1,
     title: "Sadman 2023",
     description: "Sad",
     cinema: "A32",
-    showtimes: [{ id: "SD123", startTime: "15:30" }],
+    showtimes: [{ id: "SD123", start_time: '2023-04-23T09:30:00.000Z' }],
   },
   {
-    id: "UUID39",
+    id: 2,
     title: "Chainsaw Meow",
     description: "Chainsaw Time",
     cinema: "A32",
-    showtimes: [{ id: "SD124", startTime: "16:30" }],
+    showtimes: [{ id: "SD124", start_time: "2023-04-24T09:30:00.000Z" }],
   },
   {
-    id: "UUID38",
+    id: 3,
     title: "Chainsaw Meow 2",
     description: "Chainsaw Time but second chance",
     cinema: "A12",
-    showtimes: [{ id: "SD134", startTime: "17:30" }],
+    showtimes: [{ id: "SD134", start_time: "2023-04-24T09:30:00.000Z" }],
   },
 ];
 // Modified from ChatGPT output

@@ -1,9 +1,9 @@
 export interface Showtime {
     id: string;
-    startTime: string | Date;
+    start_time: string; // Python convention
 }
 export interface Movie {
-    id: string; // Assuming UUID
+    id: number;  // Use this ID as key. Do not ever render it.
     title: string;
     description: string;
     cinema: string;
@@ -29,7 +29,7 @@ export const enum TicketStatus {
 export interface Ticket {
     id: string;
     seatTicket: string; // Same as seatNumber
-    showtime: Showtime['startTime']
+    showtime: Showtime['start_time']
 }
 
 // Not error in this context but from API
