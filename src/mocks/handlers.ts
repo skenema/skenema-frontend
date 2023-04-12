@@ -1,5 +1,5 @@
 import { DefaultBodyType, PathParams, rest } from "msw";
-import { APIError, Movie, Seat } from "./types";
+import { APIError, Movie, Seat } from "../types/responses";
 import { movies, showtimes } from "./consts";
 
 export const handlers = [

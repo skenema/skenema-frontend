@@ -1,4 +1,4 @@
-import type { Movie, Seat, ShowtimeReservation } from "./types";
+import type { Movie, Seat, ShowtimeReservation } from "../types/responses";
 
 // TODO: Use date for start time
 export const movies: Movie[] = [

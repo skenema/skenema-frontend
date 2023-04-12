@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { allSeat } from '../mocks/seat';
-import { Movie } from '../mocks/types';
+import { Movie } from '../types/responses';
 
 const Reservation = () => {
     const movie: Movie = useLocation().state.movie

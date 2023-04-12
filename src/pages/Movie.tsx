@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import MovieCard from "../components/MovieCard";
-import { movies } from "../mocks/consts";
-import { Movie } from "../mocks/types"
+import { Movie } from "../types/responses"
 import useSWR from 'swr'
 import { fetchJSON } from "../utils";
 

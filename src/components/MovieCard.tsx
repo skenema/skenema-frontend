@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Movie } from '../mocks/types'
+import { Movie } from '../types/responses'
 
 interface props {
     movieDetail: Movie
