@@ -11,6 +11,13 @@ import Reservation from './pages/Reservation'
 import Confirm from './pages/Confirm'
 import Summary from './pages/Summary'
 
+// Mock in DEV environment only!
+if (import.meta.env.DEV) {
+  const { worker } = await import("./mocks/worker")
+  worker.start()
+
+}
+
 const router = createBrowserRouter([
   {
     path: '/',
