@@ -77,7 +77,7 @@ const Reservation = () => {
           to={`/movie/confirm`}
           state={{ seat: selectedItems, movie: movie, showtime: showtime }}
         >
-          <button className="btn btn-active btn-primary absolute bottom-3 right-3">
+          <button disabled={selectedItems.length === 0} className="btn btn-active btn-primary absolute bottom-3 right-3">
             ยืนยัน
           </button>
         </Link>
