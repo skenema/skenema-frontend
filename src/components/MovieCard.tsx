@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Movie, Showtime } from '../types/responses'
 import useSWR from 'swr'
 import { fetchJSON } from '../utils'
-import { showtimes } from '../mocks/consts'
 interface props {
     movieDetail: Movie
 }
