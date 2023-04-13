@@ -16,7 +16,7 @@ export interface ShowtimeReservation {
 }
 
 export interface Seat {
-    seat_id: string; // Imagine H02 or something like that.
+    seat_id: number; // Imagine H02 or something like that.
     is_available: boolean;
 }
 

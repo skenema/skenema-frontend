@@ -43,13 +43,12 @@ function generateSeatNumber(alphabet: string, num: number): string[] {
 
   return seatNumbers;
 }
-// We have A - H and 01 to 20
-const allAvailableSeat = "ABCDEFGH"
-  .split("")
-  .flatMap((alphabet) => generateSeatNumber(alphabet, 20))
-  .map((seat) => ({ seat_id: seat, is_available: true } as Seat));
+
+
+const allSeats: Seat[] = Array(10).map((_, i) => ({seat_id: i + 1, is_available: true}))
+
 export const showtimes = {
-  [movies[0].showtimes[0].id]: [...allAvailableSeat],
-  [movies[1].showtimes[0].id]: [...allAvailableSeat],
-  [movies[2].showtimes[0].id]: [...allAvailableSeat],
+  [movies[0].showtimes[0].id]: [...allSeats],
+  [movies[1].showtimes[0].id]: [...allSeats],
+  [movies[2].showtimes[0].id]: [...allSeats],
 };
