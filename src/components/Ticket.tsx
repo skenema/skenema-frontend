@@ -1,3 +1,5 @@
+import { getCustomDateFormat } from "../utils"
+
 interface props {
     title: string
     seat: number
@@ -12,7 +14,7 @@ const Ticket = ({title, seat, showtime}: props) => {
         </div>
         <div className="grid items-center">
             <p className="text-3xl">{title} - {seat}</p>
-            <p className="text-xl">{showtime}</p>
+            <p className="text-xl">{getCustomDateFormat(new Date(showtime))}</p>
         </div>
     </div>
   )

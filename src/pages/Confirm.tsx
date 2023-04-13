@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Movie, Showtime } from '../types/responses'
+import { getCustomDateFormat } from '../utils'
 
 const Confirm = () => {
     const selectedSeat: number[] = useLocation().state.seat
@@ -25,7 +26,7 @@ const Confirm = () => {
                 <div className='mt-10 '>
                     {detailTable("Cinema", movie.cinema)}
                     {detailTable("Seat", selectedSeat.sort((a, b) => a - b).map(s => s.toString()).join(', '))}
-                    {detailTable("Showtime", `${date.getDate()} ${date.toLocaleString('en-GB', {month: 'long'})} ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`)}
+                    {detailTable("Showtime", getCustomDateFormat(date))}
                 </div>
                 <Link to={"/movie/summary"} state={{ selectedSeat: selectedSeat, title: movie.title, showtime: showtime }}>
                     <button className="btn btn-active btn-primary absolute bottom-3 right-3">ยืนยัน</button>
