@@ -5,8 +5,9 @@ import { Showtime } from "../types/responses"
 const Summary = () => {
     const selectedSeat: number[] = useLocation().state.selectedSeat
     const title: string = useLocation().state.title
-    // TODO: Use something else instead of ISO string
     const showtime: Showtime = useLocation().state.showtime
+
+    // TODO: Use returned ticket from API instead
 
     return (
         <div className="p-3 flex justify-center">
