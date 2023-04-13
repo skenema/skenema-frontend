@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Movie } from '../types/responses'
 
 const Confirm = () => {
+    // TODO: Adapt new seat numbers
     const selectedSeat: string[] = useLocation().state.seat
     const movie: Movie = useLocation().state.movie
     const showtime = useLocation().state.showtime
