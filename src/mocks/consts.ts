@@ -47,7 +47,7 @@ function generateSeatNumber(alphabet: string, num: number): string[] {
 const allAvailableSeat = "ABCDEFGH"
   .split("")
   .flatMap((alphabet) => generateSeatNumber(alphabet, 20))
-  .map((seat) => ({ seatNumber: seat, isAvailable: true } as Seat));
+  .map((seat) => ({ seat_id: seat, isAvailable: true } as Seat));
 export const showtimes = {
   [movies[0].showtimes[0].id]: [...allAvailableSeat],
   [movies[1].showtimes[0].id]: [...allAvailableSeat],
