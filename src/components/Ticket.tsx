@@ -1,6 +1,6 @@
 interface props {
     title: string
-    seat: string
+    seat: number
     showtime: string
 }
 
