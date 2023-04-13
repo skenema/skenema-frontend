@@ -22,9 +22,6 @@ const Reservation = () => {
     `/api/reservation/${movie.id}/${showtime.id}`,
     fetchJSON
   );
-  useEffect(() => {
-    console.log(seats);
-  }, [seats]);
 
   // A bit inefficient but it is probably OK for a small project.
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
