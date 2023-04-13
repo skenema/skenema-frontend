@@ -45,7 +45,7 @@ function generateSeatNumber(alphabet: string, num: number): string[] {
 }
 
 
-const allSeats: Seat[] = Array(10).map((_, i) => ({seat_id: i + 1, is_available: true}))
+const allSeats: Seat[] = Array(10).fill(0).map((_, i) => ({seat_id: i + 1, is_available: true}))
 
 export const showtimes = {
   [movies[0].showtimes[0].id]: [...allSeats],

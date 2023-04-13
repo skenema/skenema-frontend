@@ -28,7 +28,7 @@ const MovieCard = ({ movieDetail }: props) => {
                     {error && <p className="text-error font-bold">{error.toString()}</p>}
                     {!showtimes && <p>Loading showtimes</p>}
                     {showtimes && showtimes.map((showtime, id) => {
-                        return <Link key={showtime.id} to={`/movie/reservation`} state={{showtime: showtime.start_time, movie: movieDetail}}>
+                        return <Link key={showtime.id} to={`/movie/reservation`} state={{showtime: showtime, movie: movieDetail}}>
                             <button className="btn btn-success">{isoStringToNormalDate(showtime.start_time)}</button>
                         </Link>
                     })}

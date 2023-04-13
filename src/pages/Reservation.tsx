@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import useSWR from 'swr'
 import { Link, useLocation } from 'react-router-dom';
 import { allSeat } from '../mocks/seat';
-import { Movie } from '../types/responses';
+import { Movie, Seat, Showtime } from '../types/responses';
+import { fetchJSON } from '../utils';
 
 const Reservation = () => {
     const movie: Movie = useLocation().state.movie
-    const showtime = useLocation().state.showtime
+    const showtime: Showtime = useLocation().state.showtime
+    useEffect(() => {
+        console.log(showtime)
+    }, [showtime])
+    const { data: seats, error } = useSWR<Seat[]>(`/api/reservation/${movie.id}/${showtime.id}`, fetchJSON)
+    useEffect(() => {
+        console.log(seats)
+    }, [seats])
     const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
     function clickHandler(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -31,13 +40,15 @@ const Reservation = () => {
                     </p>
                 </div>
                 <div className="gap-2 grid grid-cols-12 auto-rows-[3rem] mt-[3rem] items-center">
-                    {allSeat.map((seat, id) => {
+                    {error && <p>{error.toString()}</p>}
+                    {!seats && <p>Loading</p>}
+                    {seats && seats.map((seat, id) => {
                         return <div
-                            key={id}
-                            data-id={seat.seatNumber}
+                            key={seat.seat_id}
+                            data-id={seat.seat_id}
                             className='h-[2rem] w-[2rem] cursor-pointer'
-                            onClick={seat.isAvailable ? clickHandler : undefined}
-                            style={{backgroundColor: seat.isAvailable ? '#A94545' : '#986AD3'}}
+                            onClick={seat.is_available ? clickHandler : undefined}
+                            style={{backgroundColor: seat.is_available ? '#A94545' : '#986AD3'}}
                         ></div>
                     })}
                 </div>
