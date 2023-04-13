@@ -1,27 +1,32 @@
 import type { Movie, Seat, ShowtimeReservation } from "../types/responses";
+import { Showtime } from "../types/responses";
+
+interface MoviesWithShowtimes extends Movie {
+  showtimes: Showtime[]
+}
 
 // TODO: Use date for start time
-export const movies: Movie[] = [
+export const movies: MoviesWithShowtimes[] = [
   {
     id: 1,
     title: "Sadman 2023",
     description: "Sad",
     cinema: "A32",
-    showtimes: [{ id: "SD123", start_time: '2023-04-23T09:30:00.000Z' }],
+    showtimes: [{ id: 1, start_time: '2023-04-23T09:30:00.000Z' }],
   },
   {
     id: 2,
     title: "Chainsaw Meow",
     description: "Chainsaw Time",
     cinema: "A32",
-    showtimes: [{ id: "SD124", start_time: "2023-04-24T09:30:00.000Z" }],
+    showtimes: [{ id: 2, start_time: "2023-04-24T09:30:00.000Z" }],
   },
   {
     id: 3,
     title: "Chainsaw Meow 2",
     description: "Chainsaw Time but second chance",
     cinema: "A12",
-    showtimes: [{ id: "SD134", start_time: "2023-04-24T09:30:00.000Z" }],
+    showtimes: [{ id: 3, start_time: "2023-04-24T09:30:00.000Z" }],
   },
 ];
 // Modified from ChatGPT output
