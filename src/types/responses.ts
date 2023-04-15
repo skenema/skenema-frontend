@@ -16,8 +16,8 @@ export interface ShowtimeReservation {
 }
 
 export interface Seat {
-    seatNumber: string; // Imagine H02 or something like that.
-    isAvailable: boolean;
+    seat_id: number; // Imagine H02 or something like that.
+    is_available: boolean;
 }
 
 export const enum TicketStatus {

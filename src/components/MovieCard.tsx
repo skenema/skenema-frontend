@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Movie, Showtime } from '../types/responses'
 import useSWR from 'swr'
-import { fetchJSON } from '../utils'
+import { fetchJSON, getCustomDateFormat } from '../utils'
 interface props {
     movieDetail: Movie
 }
@@ -28,8 +28,8 @@ const MovieCard = ({ movieDetail }: props) => {
                     {error && <p className="text-error font-bold">{error.toString()}</p>}
                     {!showtimes && <p>Loading showtimes</p>}
                     {showtimes && showtimes.map((showtime, id) => {
-                        return <Link key={showtime.id} to={`/movie/reservation`} state={{showtime: showtime.start_time, movie: movieDetail}}>
-                            <button className="btn btn-success">{isoStringToNormalDate(showtime.start_time)}</button>
+                        return <Link key={showtime.id} to={`/movie/reservation`} state={{showtime: showtime, movie: movieDetail}}>
+                            <button className="btn btn-success">{getCustomDateFormat(new Date(showtime.start_time))}</button>
                         </Link>
                     })}
                 </div>
