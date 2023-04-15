@@ -20,7 +20,7 @@ const MovieCard = ({ movieDetail }: props) => {
                     <div className='bg-black w-[10rem] h-[10rem]'></div>
                 </div>
                 <div>
-                    <p>{movieDetail.title} </p>
+                    <h2 className='text-3xl font-bold'>{movieDetail.title} </h2>
                     <p>{movieDetail.description}</p>
                 </div>
                 <div className='text-center'>{movieDetail.cinema}</div>
