@@ -24,6 +24,8 @@ const Summary = () => {
         <p className="text-center text-warning bg-black">
           Please print or screenshot this page because you will not see it
           again.
+          <br></br>
+          โปรดพิมพ์หน้านี้เพราะจะเห็นได้แค่ครั้งเดียวเท่านั้น
         </p>
         <div className="mt-10">
           <TicketSheet

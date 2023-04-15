@@ -4,6 +4,8 @@ import Index from './pages/Index'
 import Dev from './pages/Dev'
 
 import './index.css'
+import "@fontsource/ibm-plex-sans-thai"
+import "@fontsource/ibm-plex-sans-thai-looped"
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Movie from './pages/Movie'
 import Navbar from './components/Navbar'
