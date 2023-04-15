@@ -13,7 +13,7 @@ const Ticket = ({title, seat, showtime}: props) => {
             <div className="bg-black w-full h-full"></div>
         </div>
         <div className="grid items-center">
-            <p className="text-3xl">{title} - {seat}</p>
+            <p className="text-3xl">{title} - Seat {seat}</p>
             <p className="text-xl">{getCustomDateFormat(new Date(showtime))}</p>
         </div>
     </div>
