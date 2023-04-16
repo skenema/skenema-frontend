@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Reservation from './pages/Reservation'
 import Confirm from './pages/Confirm'
 import Summary from './pages/Summary'
+import Login from './pages/Login'
 
 // Mock in DEV environment only!
 if (import.meta.env.DEV) {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: '/movie/summary',
     element: <Summary />
+  },
+  {
+    path: '/login',
+    element: <Login />
   }
 ])
 
