@@ -32,6 +32,13 @@ export interface Ticket {
     showtime: Showtime['start_time']
 }
 
+export interface AuthResponse {
+    access: string;
+    refresh: string;
+}
+
+export type RefreshResponse = Omit<AuthResponse, 'refresh'>
+
 // Not error in this context but from API
 export interface APIError {
     message: string;
