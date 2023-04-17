@@ -42,4 +42,17 @@ export type RefreshResponse = Omit<AuthResponse, 'refresh'>
 // Not error in this context but from API
 export interface APIError {
     message: string;
+    code?: string;
+}
+
+// 'id': ticket.id,
+// 'seatNumber': ticket.seatNumber,
+// 'cinema': ticket.cinema,
+// 'showtime': ticket.showtime
+
+export interface TicketValidationResponse {
+    id: number;
+    seatNumber: number;
+    cinema: string;
+    showtime: string;
 }

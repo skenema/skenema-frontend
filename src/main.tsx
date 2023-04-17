@@ -13,6 +13,7 @@ import Reservation from './pages/Reservation'
 import Confirm from './pages/Confirm'
 import Summary from './pages/Summary'
 import Login from './pages/Login'
+import TicketValidation from './pages/TicketValidation'
 
 // Mock in DEV environment only!
 if (import.meta.env.DEV) {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/validate-ticket/:ticketId',
+    element: <TicketValidation />
   }
 ])
 
