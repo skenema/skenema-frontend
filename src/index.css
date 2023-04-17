@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* NOTE: Global primitive style should goes here. */
+
+.result-table td:last-child {
+    @apply text-right;
+}
