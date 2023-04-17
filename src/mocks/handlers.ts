@@ -111,7 +111,7 @@ export const handlers = [
         id: ticketNum,
         seatNumber: 9,
         cinema: "A32",
-        showtime: new Date(2023, 10, 12).toISOString()
+        showtime: new Date(2023, 10, 12, 16, 30).toISOString()
       }))
     }
   ),
