@@ -105,7 +105,7 @@ export const handlers = [
       // In this mock, if ticket ID is 3, it is expired.
       const ticketNum = parseInt(ticketId, 10)
       if (ticketNum === 3) {
-        return res(ctx.status(200), ctx.json({message: "Expired ticket", code: "ticket_expired"}))
+        return res(ctx.status(403), ctx.json({message: "Expired ticket", code: "ticket_expired"}))
       }
       return res(ctx.status(200), ctx.json({
         id: ticketNum,
