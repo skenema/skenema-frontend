@@ -11,14 +11,6 @@ const AddMovie = () => {
           Cinema
         </label>
         <input type="text" id="cinema" className="input input-bordered" />
-        <label className="label" htmlFor="number-seats">
-          Number of seats
-        </label>
-        <input
-          type="number"
-          id="number-seats"
-          className="input input-bordered max-w-xs"
-        />
         <label className="label" htmlFor="thumbnail">Thumbnail</label>
         <input type="file" className="file-input file-input-bordered" id="thumbnail" />
         <input
