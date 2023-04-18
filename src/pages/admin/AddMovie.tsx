@@ -19,6 +19,8 @@ const AddMovie = () => {
           id="number-seats"
           className="input input-bordered max-w-xs"
         />
+        <label className="label" htmlFor="thumbnail">Thumbnail</label>
+        <input type="file" className="file-input file-input-bordered" id="thumbnail" />
         <input
           type="submit"
           className="btn my-4 btn-primary"
