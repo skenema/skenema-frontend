@@ -14,6 +14,8 @@ import Confirm from './pages/Confirm'
 import Summary from './pages/Summary'
 import Login from './pages/Login'
 import TicketValidation from './pages/TicketValidation'
+import List from './pages/admin/List'
+import AddMovie from './pages/admin/AddMovie'
 
 // Mock in DEV environment only!
 if (import.meta.env.DEV) {
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
   {
     path: '/validate-ticket/:ticketId',
     element: <TicketValidation />
+  },
+  {
+    path: "/admin",
+    element: <List />
+  },
+  {
+    path: "/admin/add-movie",
+    element: <AddMovie />
   }
 ])
 
