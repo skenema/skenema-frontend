@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 const List = () => {
   return (
     <div className="mt-8 w-1/2 mx-auto">
       <h1 className="text-4xl font-bold">All movies</h1>
       <div className="space-x-8 py-8">
-        <button className="btn btn-primary">Add movie</button>
+        <Link to="/admin/add-movie">
+          <a className="btn btn-primary">Add movie</a>
+        </Link>
       </div>
       <div className="flex flex-col gap-8">
         <div className="grid grid-cols-[40%,60%] bg-base-200">
