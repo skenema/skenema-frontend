@@ -5,7 +5,7 @@ import { allSeat } from "../mocks/seat";
 import { Movie, Seat, Showtime } from "../types/responses";
 import { fetchJSON } from "../utils";
 
-function getSeatBackgroundColor(
+export function getSeatBackgroundColor(
   isReserving: boolean,
   isAvailable: boolean
 ): string {

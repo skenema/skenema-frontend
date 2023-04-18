@@ -16,6 +16,7 @@ import Login from './pages/Login'
 import TicketValidation from './pages/TicketValidation'
 import List from './pages/admin/List'
 import AddMovie from './pages/admin/AddMovie'
+import MovieDetail from './pages/admin/MovieDetail'
 
 // Mock in DEV environment only!
 if (import.meta.env.DEV) {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/add-movie",
     element: <AddMovie />
+  },
+  {
+    path: '/admin/movies/:movieId',
+    element: <MovieDetail />
   }
 ])
 
