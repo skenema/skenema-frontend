@@ -18,7 +18,9 @@ const List = () => {
             <h2>Titanic</h2>
             <p>Cinema: A32</p>
             <div className="flex">
-            <button className="btn btn-info ml-auto">Detail</button>
+              <Link to={`/admin/movies/1`}>
+                <button className="btn btn-info ml-auto">Detail</button>
+              </Link>
             </div>
           </div>
         </div>
