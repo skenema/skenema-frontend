@@ -14,6 +14,9 @@ import Confirm from './pages/Confirm'
 import Summary from './pages/Summary'
 import Login from './pages/Login'
 import TicketValidation from './pages/TicketValidation'
+import List from './pages/admin/List'
+import AddMovie from './pages/admin/AddMovie'
+import MovieDetail from './pages/admin/MovieDetail'
 
 // Mock in DEV environment only!
 if (import.meta.env.DEV) {
@@ -25,15 +28,7 @@ if (import.meta.env.DEV) {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Index />,
-  },
-  {
-    path: '/dev',
-    element: <Dev />
-  },
-  {
-    path: '/movie',
-    element: <Movie />
+    element: <Movie />,
   },
   {
     path: '/movie/reservation',
@@ -54,6 +49,18 @@ const router = createBrowserRouter([
   {
     path: '/validate-ticket/:ticketId',
     element: <TicketValidation />
+  },
+  {
+    path: "/admin",
+    element: <List />
+  },
+  {
+    path: "/admin/add-movie",
+    element: <AddMovie />
+  },
+  {
+    path: '/admin/movies/:movieId',
+    element: <MovieDetail />
   }
 ])
 

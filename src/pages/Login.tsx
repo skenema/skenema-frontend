@@ -1,5 +1,7 @@
+import { useAtom } from "jotai";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { authAtom } from "../auth";
 
 function login(username: string, password: string) {
   return fetch("/api/auth/token/", {
@@ -17,6 +19,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [accessToken, setAccessToken] = useAtom(authAtom)
   const handleSubmit: React.FormEventHandler = (e) => {
     e.preventDefault()
     login(username, password)
@@ -34,8 +37,7 @@ const Login = () => {
           // Please remember that storing this way is very unsafe.
           // I don't know other way yet. Cookie is too difficult.
           // - Pontakorn Paesaeng
-          localStorage.setItem("accessToken", res.access);
-          localStorage.setItem("refreshToken", res.refresh);
+          setAccessToken(res.access)
           navigate("/admin")
         });
       })
