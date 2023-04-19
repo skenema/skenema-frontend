@@ -28,15 +28,7 @@ if (import.meta.env.DEV) {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Index />,
-  },
-  {
-    path: '/dev',
-    element: <Dev />
-  },
-  {
-    path: '/movie',
-    element: <Movie />
+    element: <Movie />,
   },
   {
     path: '/movie/reservation',
