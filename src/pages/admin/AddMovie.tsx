@@ -11,6 +11,8 @@ const AddMovie = () => {
           Cinema
         </label>
         <input type="text" id="cinema" className="input input-bordered" />
+        <label htmlFor="description" className="label">Description</label>
+        <textarea className="textarea textarea-bordered" id="description" />
         <label className="label" htmlFor="thumbnail">Thumbnail</label>
         <input type="file" className="file-input file-input-bordered" id="thumbnail" />
         <input
