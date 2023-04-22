@@ -41,7 +41,10 @@ const AddMovie = () => {
     if (file) {
       formData.append("thumbnail", file)
     }
-    fetchWithAuth("/api/movies/create", accessToken!, {
+    fetch("/api/movies/create",  {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+      },
       body: formData,
       method: 'post'
     }).then(res => {
@@ -55,7 +58,7 @@ const AddMovie = () => {
   return (
     <div className="mt-8 w-1/2 mx-auto">
       <h1 className="text-4xl font-bold">Add movie</h1>
-      <form onSubmit={handleSubmission} className="form-control">
+      <form encType="multipart/form-data" onSubmit={handleSubmission} className="form-control">
         <label className="label" htmlFor="title">
           Title
         </label>

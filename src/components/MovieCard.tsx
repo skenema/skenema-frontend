@@ -17,7 +17,10 @@ const MovieCard = ({ movieDetail }: props) => {
         <div className='w-[50rem] h-[20rem] bg-gray-100 mt-[7rem]'>
             <div className='w-full h-full grid grid-cols-[40%,60%] items-center'>
                 <div className='flex justify-center'>
-                    <div className='bg-black w-[10rem] h-[10rem]'></div>
+                    {movieDetail.thumbnail.length === 0 && <div className='bg-black w-[10rem] h-[10rem] flex'>
+                        <p className='text-white m-auto'>No image</p>
+                        </div>}
+                    {movieDetail.thumbnail.length > 0 && <img className='w-3/4 h-auto max-w-full' src={movieDetail.thumbnail} alt='' />}
                 </div>
                 <div>
                     <h2 className='text-3xl font-bold'>{movieDetail.title} </h2>

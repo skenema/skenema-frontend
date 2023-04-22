@@ -7,6 +7,7 @@ export interface Movie {
     title: string;
     description: string;
     cinema: string;
+    thumbnail: string
     // showtimes: Showtime[];
 }
 
