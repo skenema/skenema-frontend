@@ -6,7 +6,7 @@ import { fetchJSON } from "../utils";
 
 const Movie = () => {
     // const [data, setData] = useState<Movie[]>(movies);
-    const { data, error } = useSWR<Movie[]>('/api/movies', fetchJSON)
+    const { data, error } = useSWR<Movie[]>('/api/movies/', fetchJSON)
     if (error) return (
         <div className="w-full h-full grid place-content-center overflow-scroll">
             <h1 className="text-error font-bold text-xl">Error</h1>
