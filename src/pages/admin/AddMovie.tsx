@@ -42,7 +42,8 @@ const AddMovie = () => {
       formData.append("thumbnail", file)
     }
     fetchWithAuth("/api/movies/create", accessToken!, {
-      body: formData
+      body: formData,
+      method: 'post'
     }).then(res => {
       if (res.status === 401 || res.status === 403) {
         navigate("/login")
