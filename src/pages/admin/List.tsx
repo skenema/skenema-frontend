@@ -4,7 +4,7 @@ import { fetchJSON } from "../../utils";
 import Movie from "../Movie";
 
 const List = () => {
-  const { data, error } = useSWR<Movie[]>('/api/movies', fetchJSON)
+  const { data, error } = useSWR<Movie[]>('/api/movies/', fetchJSON)
   if (error) {
     <div className="mt-8 w-1/2 mx-auto">
       <h1 className="text-4xl font-bold text-error">Error: {error.toString()}</h1>
