@@ -1,11 +1,17 @@
 import { Link, useParams } from "react-router-dom";
-import { getSeatBackgroundColor } from "../Reservation";
 import useSWR from "swr";
 import { fetchJSON, getCustomDateFormat } from "../../utils";
 import { Movie, Showtime } from "../../types/responses";
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import { useState } from "react";
+import dayjs from 'dayjs'
 const MovieDetail = () => {
   const params = useParams();
   const movieId = params.movieId;
+  const [date, setDate] = useState(dayjs())
+  const handleDateChange =(v: dayjs.Dayjs | null) => {
+    setDate(v as dayjs.Dayjs)
+  }
   // No 404 handling on the routing part due to time limit
   const { data: movie, error: movieError } = useSWR<Movie>(`/api/movies/${movieId}`, fetchJSON);
   const { data: showtimes, error: showtimeError} = useSWR<Showtime[]>(`/api/reservation/${movieId}`, fetchJSON)
@@ -34,15 +40,15 @@ const MovieDetail = () => {
           {showtimes && showtimes.map(showtime => (
             <li key={showtime.id}>
               {getCustomDateFormat(new Date(showtime.start_time))}{" "}
-              <button className="btn btn-info">Detail</button>
             </li>
           ))}
           </ul>
 
-          <div className="flex justify-end gap-8">
-            <button className="btn btn-primary">Add showtime</button>
-            <button className="btn btn-error">Delete</button>
-          </div>
+          <form className="form-control">
+            <label className="label">Start Time</label>
+            <DateTimePicker value={date} onChange={handleDateChange} />
+            <input type="submit" value="Add showtime" className="btn btn-primary ml-auto max-w-xs"></input>
+          </form>
         </>
       )}
     </div>

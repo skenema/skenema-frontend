@@ -93,7 +93,7 @@ export const handlers = [
   rest.get<DefaultBodyType, PathParams, TicketValidationResponse | APIError>(
     "/api/ticket/validate-ticket",
     (req, res, ctx) => {
-      const ticketId = req.url.searchParams.get("ticketId")
+      const ticketId = req.url.searchParams.get("ticketId");
       if (!ticketId) {
         return res(ctx.status(400), ctx.json({ message: "invalid param" }));
       }
@@ -103,16 +103,23 @@ export const handlers = [
       }
       // ticket can be validated now.
       // In this mock, if ticket ID is 3, it is expired.
-      const ticketNum = parseInt(ticketId, 10)
+      const ticketNum = parseInt(ticketId, 10);
       if (ticketNum === 3) {
-        return res(ctx.status(403), ctx.json({message: "Expired ticket", code: "ticket_expired"}))
+        return res(
+          ctx.status(403),
+          ctx.json({ message: "Expired ticket", code: "ticket_expired" })
+        );
       }
-      return res(ctx.status(200), ctx.json({
-        id: ticketNum,
-        seatNumber: 9,
-        cinema: "A32",
-        showtime: new Date(2023, 10, 12, 16, 30).toISOString()
-      }))
+      return res(
+        ctx.status(200),
+        ctx.json({
+          id: ticketNum,
+          seatNumber: 9,
+          cinema: "A32",
+          showtime: new Date(2023, 10, 12, 16, 30).toISOString(),
+        })
+      );
     }
   ),
 ];
+

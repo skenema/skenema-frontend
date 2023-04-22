@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Index from './pages/Index'
-import Dev from './pages/Dev'
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
 
 import './index.css'
 import "@fontsource/ibm-plex-sans-thai"
@@ -66,7 +67,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
     <Navbar />
     <RouterProvider router={router} />
+    </LocalizationProvider>
   </React.StrictMode>,
 )
