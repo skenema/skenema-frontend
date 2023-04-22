@@ -13,6 +13,7 @@ export const movies: MoviesWithShowtimes[] = [
     description: "Sad",
     cinema: "A32",
     showtimes: [{ showtime_id: 1, start_time: '2023-04-23T09:30:00.000Z' }],
+    thumbnail: ""
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const movies: MoviesWithShowtimes[] = [
     description: "Chainsaw Time",
     cinema: "A32",
     showtimes: [{ showtime_id: 2, start_time: "2023-04-24T09:30:00.000Z" }],
+    thumbnail: ""
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const movies: MoviesWithShowtimes[] = [
     description: "Chainsaw Time but second chance",
     cinema: "A12",
     showtimes: [{ showtime_id: 3, start_time: "2023-04-24T09:30:00.000Z" }],
+    thumbnail: ""
   },
 ];
 // Modified from ChatGPT output
