@@ -27,6 +27,7 @@ const MovieCard = ({ movieDetail }: props) => {
                 <div className='flex justify-start items-center p-3'>
                     {error && <p className="text-error font-bold">{error.toString()}</p>}
                     {!showtimes && <p>Loading showtimes</p>}
+                    {showtimes && showtimes.length === 0 && <p className='text-base-content'>There is no showtime.</p>}
                     {showtimes && showtimes.map((showtime, id) => {
                         return <Link key={showtime.showtime_id} to={`/movie/reservation`} state={{showtime: showtime, movie: movieDetail}}>
                             <button className="btn btn-success">{getCustomDateFormat(new Date(showtime.start_time))}</button>
