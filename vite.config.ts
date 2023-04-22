@@ -13,6 +13,11 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api\/movies/, ""),
         },
+        "/movies_service/media/": {
+          target: "http://127.0.0.1:8989/movies_service/media",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/movies_service\/media/, ""),
+        },
         "/api/auth": { target: "http://127.0.0.1:9000", changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/auth/, "")
        },
