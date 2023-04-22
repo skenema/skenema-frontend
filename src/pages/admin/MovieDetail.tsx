@@ -38,7 +38,7 @@ const MovieDetail = () => {
           {(!showtimeError && !showtimes) && <p>Loading...</p>}
           <ul>
           {showtimes && showtimes.map(showtime => (
-            <li key={showtime.id}>
+            <li key={showtime.showtime_id}>
               {getCustomDateFormat(new Date(showtime.start_time))}{" "}
             </li>
           ))}

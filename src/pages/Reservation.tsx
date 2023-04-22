@@ -19,7 +19,7 @@ const Reservation = () => {
   const movie: Movie = useLocation().state.movie;
   const showtime: Showtime = useLocation().state.showtime;
   const { data: seats, error } = useSWR<Seat[]>(
-    `/api/reservation/${movie.id}/${showtime.id}`,
+    `/api/reservation/${movie.id}/${showtime.showtime_id}`,
     fetchJSON
   );
 

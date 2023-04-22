@@ -10,7 +10,7 @@ import { movies, showtimes } from "./consts";
 
 export const handlers = [
   rest.get<DefaultBodyType, PathParams, Movie[]>(
-    "/api/movies",
+    "/api/movies/",
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(movies));
     }
@@ -57,7 +57,7 @@ export const handlers = [
       );
     }
     const showtimeId = parseInt(req.params.showtimeId, 10);
-    const showtime = movie.showtimes.find((s) => s.id === showtimeId);
+    const showtime = movie.showtimes.find((s) => s.showtime_id === showtimeId);
     if (!showtime) {
       return res(
         ctx.status(404),
@@ -79,7 +79,7 @@ export const handlers = [
         );
       }
       const showtimeId = parseInt(req.params.showtimeId, 10);
-      const showtime = movie.showtimes.find((s) => s.id === showtimeId);
+      const showtime = movie.showtimes.find((s) => s.showtime_id === showtimeId);
       if (!showtime) {
         return res(
           ctx.status(404),
