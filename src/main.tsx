@@ -20,11 +20,12 @@ import AddMovie from './pages/admin/AddMovie'
 import MovieDetail from './pages/admin/MovieDetail'
 
 // Mock in DEV environment only!
-if (import.meta.env.DEV) {
-  const { worker } = await import("./mocks/worker")
-  worker.start()
+// if (import.meta.env.DEV) {
+//   const { worker } = await import("./mocks/worker")
+//   console.log("DEV ENVIRONMENT")
+//   worker.start()
 
-}
+// }
 
 const router = createBrowserRouter([
   {
