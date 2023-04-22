@@ -17,7 +17,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className="navbar-end">
-        {accessToken ? (
+        {!accessToken ? (
           <a href="/login" className="btn btn-ghost normal-case text-xl">
             Login
           </a>
