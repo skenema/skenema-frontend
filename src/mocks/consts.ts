@@ -12,21 +12,24 @@ export const movies: MoviesWithShowtimes[] = [
     title: "Sadman 2023",
     description: "Sad",
     cinema: "A32",
-    showtimes: [{ id: 1, start_time: '2023-04-23T09:30:00.000Z' }],
+    showtimes: [{ showtime_id: 1, start_time: '2023-04-23T09:30:00.000Z' }],
+    thumbnail: ""
   },
   {
     id: 2,
     title: "Chainsaw Meow",
     description: "Chainsaw Time",
     cinema: "A32",
-    showtimes: [{ id: 2, start_time: "2023-04-24T09:30:00.000Z" }],
+    showtimes: [{ showtime_id: 2, start_time: "2023-04-24T09:30:00.000Z" }],
+    thumbnail: ""
   },
   {
     id: 3,
     title: "Chainsaw Meow 2",
     description: "Chainsaw Time but second chance",
     cinema: "A12",
-    showtimes: [{ id: 3, start_time: "2023-04-24T09:30:00.000Z" }],
+    showtimes: [{ showtime_id: 3, start_time: "2023-04-24T09:30:00.000Z" }],
+    thumbnail: ""
   },
 ];
 // Modified from ChatGPT output
@@ -48,7 +51,7 @@ function generateSeatNumber(alphabet: string, num: number): string[] {
 const allSeats: Seat[] = Array(10).fill(0).map((_, i) => ({seat_id: i + 1, is_available: true}))
 
 export const showtimes = {
-  [movies[0].showtimes[0].id]: [...allSeats],
-  [movies[1].showtimes[0].id]: [...allSeats],
-  [movies[2].showtimes[0].id]: [...allSeats],
+  [movies[0].showtimes[0].showtime_id]: [...allSeats],
+  [movies[1].showtimes[0].showtime_id]: [...allSeats],
+  [movies[2].showtimes[0].showtime_id]: [...allSeats],
 };

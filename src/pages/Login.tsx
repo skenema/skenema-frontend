@@ -6,6 +6,9 @@ import { authAtom } from "../auth";
 function login(username: string, password: string) {
   return fetch("/api/auth/token/", {
     method: "POST",
+    headers: {
+      'Content-Type': "application/json"
+    },
     body: JSON.stringify({
       username,
       password,

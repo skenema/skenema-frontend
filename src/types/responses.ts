@@ -1,5 +1,5 @@
 export interface Showtime {
-    id: number;
+    showtime_id: number;
     start_time: string; // Python convention
 }
 export interface Movie {
@@ -7,6 +7,7 @@ export interface Movie {
     title: string;
     description: string;
     cinema: string;
+    thumbnail: string
     // showtimes: Showtime[];
 }
 

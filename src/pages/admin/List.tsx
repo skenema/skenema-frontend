@@ -4,7 +4,7 @@ import { fetchJSON } from "../../utils";
 import Movie from "../Movie";
 
 const List = () => {
-  const { data, error } = useSWR<Movie[]>('/api/movies', fetchJSON)
+  const { data, error } = useSWR<Movie[]>('/api/movies/', fetchJSON)
   if (error) {
     <div className="mt-8 w-1/2 mx-auto">
       <h1 className="text-4xl font-bold text-error">Error: {error.toString()}</h1>
@@ -23,7 +23,14 @@ const List = () => {
         {data && data.map(movie => (
         <div key={movie.id} className="grid grid-cols-[40%,60%] bg-base-200">
           <div className="flex justify-center">
-            <div className="bg-black w-[10rem] h-[10rem]"></div>
+            {movie.thumbnail.length === 0 && (
+            <div className="bg-black w-[10rem] h-[10rem] flex">
+              <p className="text-white m-auto">No image</p>
+            </div>
+            )}
+            {movie.thumbnail.length > 0 && (
+              <img className="w-full h-auto max-w-[300px]" src={movie.thumbnail} alt={movie.title} />
+            )}
           </div>
           <div className="space-y-4 py-4 pr-4">
             <h2>{movie.title}</h2>
